@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Facial Recognition AR Server</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <script src="static/socket.io.js"></script>
+		<script>
+		  var socket = io('http://localhost:8080/');
+		  socket.on('connect', function(sio){
+		  	console.log("connected")
+		  	// console.log(sio)
+		  	console.log(socket)
+		  	// socket.emit("chat message", "eae parca");
+		  	// socket.emit('message', { my: 'novo dado2' });
+		  });
+		  socket.on('chat message', function(data){});
+
+		  socket.on("*",function(event,data) {
+		      console.log(event);
+		      console.log(data);
+		  });
+
+		  socket.on('reply', function(data){
+		  	console.log(" recebi algo --- " + data)
+		  });
+		  socket.on('disconnect', function(){});
+		</script>
+
+    </head>
+    <body>
+
+        <h1>Eai brother</h1>
+    </body>
+</html>
