@@ -126,7 +126,7 @@ def recognize_face(face_image_encoded, input_embeddings, model):
     embedding = image_to_embedding(face_image_encoded, model)
 
     if(type(embedding) == int):
-        return {"nome": "Face não reconhecida", "minimun_distance": str(1), "result": "Not Found"}
+        return {"nome": "Face nao reconhecida", "minimun_distance": str(1), "result": "Not Found"}
 
     minimum_distance = 200
     name = None
